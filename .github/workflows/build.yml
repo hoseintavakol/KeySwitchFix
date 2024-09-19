@@ -16,9 +16,9 @@ jobs:
         shell: pwsh
         run: |
           $files = git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-          if (-not ($files | Select-String -Pattern 'KeySwitchFix.py')) {
+          if ($files -notcontains 'KeySwitchFix.py') {
             Write-Host "No changes to KeySwitchFix.py, skipping release."
-            exit 0
+            exit 1
           }
 
       - name: Install Python
