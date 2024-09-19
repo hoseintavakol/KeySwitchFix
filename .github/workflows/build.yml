@@ -33,7 +33,7 @@ jobs:
       run: pyinstaller --onefile --windowed --icon=logo3.ico KeySwitchFix1.0.py  # Make sure the icon path is correct
 
     - name: Upload executable
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: compiled-binary
         path: dist/yourscript  # Replace with your executable name
