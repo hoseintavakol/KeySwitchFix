@@ -140,4 +140,4 @@ Once done, the program will automatically run when you start your computer. You 
 بعد از انجام این مراحل، برنامه به‌طور خودکار با شروع ویندوز اجرا خواهد شد. همچنین می‌توانید وضعیت استارت‌آپ برنامه را از طریق **Task Manager** در تب **Startup** مدیریت کنید و آن را فعال یا غیرفعال نمایید.
 
 <br><br><br><br><br>
-<p style="font-size: 8px;">Made with ChatGPT and Gemini ☺️</p>
+<p style="font-size: 5px;">Made with ChatGPT and Gemini ☺️</p>
