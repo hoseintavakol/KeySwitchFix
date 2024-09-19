@@ -5,7 +5,7 @@ import pystray
 from pystray import MenuItem as item
 from PIL import Image, ImageDraw
 import os
-import sys
+# import sys
 import threading
 import win32api
 import win32con
