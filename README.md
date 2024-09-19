@@ -50,7 +50,6 @@ If you want to use a combination of two keys or more than three keys, you must a
 if is_key_pressed(key1) and is_key_pressed(key2):
 ```
 
-Additionally, an image of the relevant section will be provided in the documentation to help you understand where to make the changes.
 
 #### Compiling to an EXE:
 After editing the code, you will need to compile it into an executable file (.exe). To do this, first, download and install Python from the official website. Ensure that Python is correctly working from the command line.
@@ -93,7 +92,7 @@ key3 = 0x47
 if is_key_pressed(key1) and is_key_pressed(key2):
 ```
 
-همچنین یک تصویر از بخش مربوطه در مستندات قرار خواهد گرفت تا تغییرات موردنظر را بهتر درک کنید.
+
 
 #### کامپایل به فایل EXE:
 پس از ویرایش کد، باید آن را به یک فایل اجرایی (.exe) تبدیل کنید. برای این کار ابتدا پایتون را از سایت رسمی آن دانلود و نصب کنید و مطمئن شوید که در خط فرمان به درستی کار می‌کند.
