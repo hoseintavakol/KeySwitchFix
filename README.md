@@ -3,6 +3,7 @@ KeySwitchFix - Quickly Fix Mistyped Text When Using the Wrong Keyboard Layout
 "Ever started typing in one language only to realize your keyboard was set to another? KeySwitchFix is here to help! With a simple hotkey, you can instantly convert your mistyped gibberish into the correct language (e.g., Persian or English). Whether you're working in multiple languages or just accidentally typed in the wrong layout, KeySwitchFix ensures seamless transitions between languages. Say goodbye to retyping frustration!"
 
 نسخه فارسی:
+
 "آیا تا به حال تایپ کرده‌اید و بعد متوجه شده‌اید که کیبورد شما روی زبان دیگری تنظیم بوده؟ KeySwitchFix برای کمک اینجاست! با فشردن یک کلید میانبر، می‌توانید متن نامفهوم تایپ‌شده را به زبان درست (مثلاً فارسی یا انگلیسی) تبدیل کنید. چه در حال کار با چند زبان باشید یا به اشتباه در چیدمان اشتباه تایپ کرده باشید، KeySwitchFix تغییر زبان‌ها را برای شما آسان و بدون دردسر می‌کند. با این برنامه از دوباره‌نویسی خسته‌کننده خداحافظی کنید!"
 
 ---
