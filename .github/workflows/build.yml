@@ -13,12 +13,13 @@ jobs:
       
       - name: Check changed files
         id: check_changes
+        shell: pwsh
         run: |
-          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} > changed_files.txt
-          if ! grep -q "KeySwitchFix.py" changed_files.txt; then
-            echo "No changes to KeySwitchFix.py, skipping release."
+          $files = git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+          if ($files -notcontains 'KeySwitchFix.py') {
+            Write-Host "No changes to KeySwitchFix.py, skipping release."
             exit 0
-          fi
+          }
 
       - name: Install Python
         uses: actions/setup-python@v4
