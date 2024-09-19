@@ -16,7 +16,7 @@ jobs:
         shell: pwsh
         run: |
           $files = git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-          if ($files -notcontains 'KeySwitchFix.py') {
+          if (-not ($files | Select-String -Pattern 'KeySwitchFix.py')) {
             Write-Host "No changes to KeySwitchFix.py, skipping release."
             exit 0
           }
@@ -64,4 +64,3 @@ jobs:
           asset_path: dist/KeySwitchFix.exe
           asset_name: KeySwitchFix-Windows.exe
           asset_content_type: application/zip
-
