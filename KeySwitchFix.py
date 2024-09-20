@@ -55,6 +55,7 @@ def alt_shift_with_win32api():
 
 
 
+
 def create_image():
     img = Image.new('RGBA', (100, 100), (255, 255, 255, 0))  # Create a transparent background
     draw = ImageDraw.Draw(img)
