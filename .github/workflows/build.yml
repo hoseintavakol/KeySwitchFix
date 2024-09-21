@@ -27,19 +27,16 @@ jobs:
           name: Windows_qwiklabs
           path: dist/KeySwitchFix.exe
 
-      - name: Get commit message for the tag
-        id: get_commit_message
-        run: |
-          echo "::set-output name=message::$(git log -1 --format=%B ${{ github.ref }})"
-
       - name: create release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref_name }}
-          release_name: ${{ steps.get_commit_message.outputs.message }}
+          tag_name: ${{ github.event.head_commit.message }}
+          release_name: ${{ github.event.head_commit.message }}
+          body: |
+            Test Release v1.0.0
           draft: false
           prerelease: false
       - name: Upload Release Asset
@@ -48,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          upload_url: ${{steps.create_release.outputs.upload_url}}
           asset_path: dist/KeySwitchFix.exe
           asset_name: KeySwitchFix-Windows.exe
           asset_content_type: application/zip
