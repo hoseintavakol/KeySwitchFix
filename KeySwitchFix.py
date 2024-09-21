@@ -11,7 +11,6 @@ import win32api
 import win32con
 # import winreg as reg
 
-
 # Virtual-Key Codes: learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 def ctrl_c_with_win32api():
     # press ctrl
