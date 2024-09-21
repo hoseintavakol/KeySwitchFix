@@ -16,7 +16,7 @@ If no text is highlighted, the program will automatically select the entire text
 
 If you want to change the default hotkey, please refer to the following section
 
----
+
 
 ### فارسی:
 
@@ -68,7 +68,7 @@ pyinstaller --onefile --windowed --icon=logo.ico KeySwitchFix.py
 
 The compiled .exe file will be available in the `dist` folder.
 
----
+
 
 ### فارسی:
 
@@ -124,7 +124,7 @@ To add the program to Windows Startup, follow these steps:
 
 Once done, the program will automatically run when you start your computer. You can also manage the program’s startup status by checking the **Task Manager** under the **Startup** tab to enable or disable it.
 
----
+
 
 ### فارسی:
 
