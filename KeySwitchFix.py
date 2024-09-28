@@ -237,7 +237,7 @@ def main():
             time.sleep(0.5)
 
         # Short delay to reduce CPU consumption
-        time.sleep(0.01)
+        time.sleep(0.02)
 
 
 if __name__ == "__main__":
