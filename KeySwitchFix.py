@@ -199,7 +199,7 @@ def process_text():
     pyperclip.copy(translated_text)  # Import the result to the clipboard
     # keyboard.send('ctrl+v')
     ctrl_v_with_win32api()
-    time.sleep(0.1)
+    # time.sleep(0.1)
     # keyboard.send('alt+shift')
     alt_shift_with_win32api()
 
