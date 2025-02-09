@@ -11,21 +11,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
       - name: Install Python
         uses: actions/setup-python@v1
         with:
           python-version: '3.12'
           architecture: 'x86'
+
       - name: Install requirements
         run: |
           pip install -r requirements.txt
-      - name: Run PyInstaller
+
+      - name: Run PyInstaller for KeySwitchFix.py
         run: |
           python -m PyInstaller KeySwitchFix.spec
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Windows_qwiklabs
-          path: dist/KeySwitchFix.exe
+
+      - name: Run PyInstaller for SettingsKeySwitchFix.py
+        run: |
+          python -m PyInstaller SettingsKeySwitchFix.spec
+
+      - name: Create zip file with both executables
+        shell: powershell
+        run: |
+          Compress-Archive -Path "dist\KeySwitchFix.exe", "dist\SettingsKeySwitchFix.exe" -DestinationPath "dist\KeySwitchFix.zip"
 
       - name: create release
         id: create_release
@@ -38,13 +46,15 @@ jobs:
           body: ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset
+
+
+      - name: Upload Release Asset (Zip File)
+        id: upload-release-asset-zip
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/KeySwitchFix.exe
-          asset_name: KeySwitchFix-Windows-${{ github.ref_name }}.exe
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/KeySwitchFix.zip
+          asset_name: KeySwitchFix-Windows-${{ github.ref_name }}.zip
           asset_content_type: application/zip
