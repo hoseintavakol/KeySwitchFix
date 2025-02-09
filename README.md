@@ -33,21 +33,24 @@ If you want to change the default hotkey, please refer to the following section
 
 
 #### Customizing the Hotkey:
-To change the default hotkey of the program, you first need to save the three files `KeySwitchFix.py`, `requirements.txt`, and `logo.ico` in the same folder. Next, open the `KeySwitchFix.py` file in a text editor. You will need to modify the variables `key1`, `key2`, and `key3` around line 222.
 
-For special keys like `Ctrl`, `Alt`, etc., follow the format used in the original code. For regular keys, do the same as demonstrated. Ensure that your new hotkey does not conflict with existing hotkeys on your system. 
+From version 2.0.0 onward, you can easily set your desired hotkey by selecting the "Change Hotkey" option, which appears when you right-click the system tray icon.
 
-For example, to set the hotkey to `Ctrl + Shift + G`, modify the variables as follows:
+~~To change the default hotkey of the program, you first need to save the three files `KeySwitchFix.py`, `requirements.txt`, and `logo.ico` in the same folder. Next, open the `KeySwitchFix.py` file in a text editor. You will need to modify the variables `key1`, `key2`, and `key3` around line 222.~~
+
+~~For special keys like `Ctrl`, `Alt`, etc., follow the format used in the original code. For regular keys, do the same as demonstrated. Ensure that your new hotkey does not conflict with existing hotkeys on your system.~~
+
+~~For example, to set the hotkey to `Ctrl + Shift + G`, modify the variables as follows:~~
 ```python
 key1 = win32con.VK_CONTROL
 key2 = win32con.VK_SHIFT
 key3 = 0x47
 ```
 
-For more information on key codes, refer to this site:  
-[Virtual-Key Codes Documentation](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+~~For more information on key codes, refer to this site:~~  
+~~[Virtual-Key Codes Documentation](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)~~
 
-If you want to use a combination of two keys or more than three keys, you must also modify the line around 233. For example, for a two-key combination:
+~~If you want to use a combination of two keys or more than three keys, you must also modify the line around 233. For example, for a two-key combination:~~
 ```python
 if is_key_pressed(key1) and is_key_pressed(key2):
 ```
@@ -67,6 +70,9 @@ pip install -r requirements.txt
 ```bash
 pyinstaller --onefile --windowed --icon=logo.ico KeySwitchFix.py
 ```
+```bash
+pyinstaller --onefile --windowed SettingsKeySwitchFix.py
+```
 
 The compiled .exe file will be available in the `dist` folder.
 
@@ -75,21 +81,24 @@ The compiled .exe file will be available in the `dist` folder.
 ### فارسی:
 
 #### سفارشی‌سازی هات‌کی:
-برای تغییر هات‌کی پیش‌فرض برنامه، ابتدا باید سه فایل `KeySwitchFix.py`، `requirements.txt` و `logo.ico` را در یک پوشه ذخیره کنید. سپس فایل `KeySwitchFix.py` را با یک ویرایشگر متن باز کنید. در حدود خط ۲۲۲، متغیرهای `key1`، `key2` و `key3` را ویرایش کنید.
 
-برای کلیدهای خاص مثل `Ctrl`، `Alt` و غیره، از فرمت کد اصلی پیروی کنید. برای کلیدهای عادی نیز مشابه عمل کنید. دقت داشته باشید که هات‌کی جدید شما با هات‌کی‌های موجود تداخلی نداشته باشد.
+از نسخه ۲.۰.۰ به بعد به راحتی میتوانید با انتخاب گزینه Change Hotkey که با راست کلیک  در آیکون سیستم‌ترای ظاهر میشود، هات‌کی دلخواه را تنظیم کنید.
 
-به‌عنوان نمونه، اگر می‌خواهید هات‌کی را به `Ctrl + Shift + G` تغییر دهید، متغیرها را به این صورت تنظیم کنید:
+~~برای تغییر هات‌کی پیش‌فرض برنامه، ابتدا باید سه فایل `KeySwitchFix.py`، `requirements.txt` و `logo.ico` را در یک پوشه ذخیره کنید. سپس فایل `KeySwitchFix.py` را با یک ویرایشگر متن باز کنید. در حدود خط ۲۲۲، متغیرهای `key1`، `key2` و `key3` را ویرایش کنید.~~
+
+~~برای کلیدهای خاص مثل `Ctrl`، `Alt` و غیره، از فرمت کد اصلی پیروی کنید. برای کلیدهای عادی نیز مشابه عمل کنید. دقت داشته باشید که هات‌کی جدید شما با هات‌کی‌های موجود تداخلی نداشته باشد.~~
+
+~~به‌عنوان نمونه، اگر می‌خواهید هات‌کی را به `Ctrl + Shift + G` تغییر دهید، متغیرها را به این صورت تنظیم کنید:~~
 ```python
 key1 = win32con.VK_CONTROL
 key2 = win32con.VK_SHIFT
 key3 = 0x47
 ```
 
-برای اطلاعات بیشتر درباره کدهای کلیدها به این سایت مراجعه کنید:  
-[مستندات Virtual-Key Codes](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+~~برای اطلاعات بیشتر درباره کدهای کلیدها به این سایت مراجعه کنید:~~  
+~~[مستندات Virtual-Key Codes](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)~~
 
-اگر بخواهید از ترکیب دو کلید یا بیشتر از سه کلید استفاده کنید، باید خط ۲۳۳ را نیز ویرایش کنید. به‌عنوان مثال برای ترکیب دو کلید:
+~~اگر بخواهید از ترکیب دو کلید یا بیشتر از سه کلید استفاده کنید، باید خط ۲۳۳ را نیز ویرایش کنید. به‌عنوان مثال برای ترکیب دو کلید:~~
 ```python
 if is_key_pressed(key1) and is_key_pressed(key2):
 ```
@@ -109,6 +118,9 @@ pip install -r requirements.txt
 2. کامپایل اسکریپت به فایل اجرایی:
 ```bash
 pyinstaller --onefile --windowed --icon=logo.ico KeySwitchFix.py
+```
+```bash
+pyinstaller --onefile --windowed SettingsKeySwitchFix.py
 ```
 
 فایل اجرایی در پوشه `dist` در دسترس خواهد بود.
